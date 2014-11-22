@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Paunin reCaptcha Directive Example</title>
+
+    <!-- Bootstrap is NOT required, it's just here to make the demo look better -->
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <!-- Include AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+
+    <!-- Include the ngReCaptcha directive -->
+    <script src="./angular-g-recaptcha.js"></script>
+
+    <!-- Include the JS ReCaptcha API -->
+    <script type="text/javascript"  src="https://www.google.com/recaptcha/api.js?render=explicit&onload=initApp"></script>
+
+    <!-- define your app and make it depend on vcRecaptcha module -->
+    <script>
+
+         (function () {
+            var app = angular.module('testApp', ['angularGRecaptcha']);
+            app.controller('testCtrl', function ($scope) {
+                console.log('controller inited');
+                $scope.model = {
+                    response: '',
+                    key: '6LfRNf4SAAAAANo8FDUU03gaVdiH25qdDBUDF0SU'
+                };
+                $scope.submit = function () {
+                    alert($scope.model.response)
+                };
+            });
+        })();
+
+        // if you want to use async recaptcha for your app,
+        // you need to bootstrap application after google recaptcha loaded and GRecaptcha initialization
+        // if you have another idea mail me pls d.m.paunin@gmail.com
+        var initApp = function(){
+            initGRecaptcha();
+            angular.element(document).ready(function () {
+                angular.bootstrap(document, ["testApp"]);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container" ng-controller="testCtrl as testCtl">
+        <h1>G reCaptcha Directive Example</h1>
+        <form>
+            <div g-recaptcha id="captcha_img" ng-model="model.response" theme="clean" key="model.key"></div>
+            <!-- Call a method in the scope of your controller to handle data submit -->
+            <button class="btn" ng-click="submit()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
