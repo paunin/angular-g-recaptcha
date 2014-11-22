@@ -1,0 +1,22 @@
+{
+  "name": "angular-g-recaptcha",
+  "version": "1.0.1",
+  "description": "An AngularJS module to ease usage of new Google reCaptcha inside a form",
+  "author": {
+    "name": "paunin"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/paunin/angular-g-recaptcha",
+  "main": "release/angular-recaptcha.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/paunin/angular-g-recaptcha.git"
+  },
+  "devDependencies": {
+  },
+  "readme": "",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/paunin/angular-g-recaptcha/issues"
+  }
+}
