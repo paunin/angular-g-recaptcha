@@ -43,6 +43,10 @@ After that, you can place a container for the captcha widget in your view, and c
 Here the `key` attribute is passed to the directive's scope, so you can use either a property in your scope or just a hardcoded string. Be careful to use your public key, not your private one.
 
 
+Validation on server:
+====
+`ng-model` should contain model for value used in  [verifying the user's response](https://developers.google.com/recaptcha/docs/verify) e.g: `ng-model="model.response"`
+
 NOTA BENE:
 ====
 * Any `g-recaptcha` directive should have `id` attribute
