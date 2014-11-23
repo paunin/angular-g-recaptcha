@@ -2,7 +2,7 @@ G reCaptcha AngularJS Directive
 =========================================
 Use this directive to be able to submit with XHR a form that contains a NEW Google reCaptcha.
 
-**Allow you to use multiple recaptcha widgets.**
+**Allow you to use multiple recaptcha widgets on one page.**
 
 Demo
 ====
